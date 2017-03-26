@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 var bcrypt = require('bcryptjs');
 
 // User Schema
@@ -15,7 +16,8 @@ var UserSchema = mongoose.Schema({
 	},
 	name: {
 		type: String
-	}
+	},
+	trips: [{ type: Schema.ObjectId, ref: 'Trip' }]
 });
 
 var User = module.exports = mongoose.model('User', UserSchema);

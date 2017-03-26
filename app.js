@@ -18,6 +18,7 @@ var db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var trips = require('./routes/trips');
 
 // Init App
 var app = express();
@@ -78,6 +79,7 @@ app.use(function (req, res, next) {
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/trips', trips);
 
 // Set Port
 app.set('port', (process.env.PORT || 3000));
